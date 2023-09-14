@@ -20,6 +20,7 @@ public class WeirdMath
 
 	private static unsafe void Prepare()
 	{
+		// https://github.com/dotnet/runtime/issues/83042
 		var ptr = (byte*) typeof(WeirdMath)
 			.GetMethod(nameof(Add),
 				System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public)!
